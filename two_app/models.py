@@ -6,3 +6,9 @@ class WebUser(models.Model):
     pv = models.IntegerField(default=1)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+
+class User(models.Model):
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)

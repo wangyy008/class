@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> docker</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>名称</th>
+            <th>创建时间</th>
+            <th>大小</th>
+        </tr>
+        {% for image in images %}
+            <tr>
+                <td>{{ image.RepoTags }}</td>
+                <td>{{ image.Created }}</td>
+                <td>{{ image.VirtualSize }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
+<form name="input" action="/build/" method="post">
+    <div>tag</div>
+    <input name="tag">
+    <div>dokfile:</div>
+    <textarea rows="20" cols="100" name="dockerfile"></textarea>
+
+    <input type="submit" value="Submit" />
+
+</form>
